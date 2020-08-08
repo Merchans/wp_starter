@@ -6,19 +6,23 @@
 
 // Create 1 Custom Post type ...
 
+/* this code is from this article:
+https://www.cloudways.com/blog/how-to-create-custom-post-types-in-wordpress/ */
+
+
 /* Custom Post Type Start */
 
 function mr_create_posttype() {
-register_post_type( 'news',
+register_post_type( 'News',
 // CPT Options
 array(
   'labels' => array(
-   'name' => __( 'news' ),
+   'name' => __( 'News' ),
    'singular_name' => __( 'News' )
   ),
   'public' => true,
   'has_archive' => false,
-  'rewrite' => array('slug' => 'news'),
+  'rewrite' => array('slug' => 'News'),
  )
 );
 }
@@ -38,29 +42,32 @@ $supports = array(
 'post-formats', // post formats
 );
 $labels = array(
-'name' => _x('news', 'plural'),
-'singular_name' => _x('news', 'singular'),
-'menu_name' => _x('news', 'admin menu'),
-'name_admin_bar' => _x('news', 'admin bar'),
-'add_new' => _x('Add New', 'add new'),
-'add_new_item' => __('Add New news'),
-'new_item' => __('New news'),
-'edit_item' => __('Edit news'),
-'view_item' => __('View news'),
-'all_items' => __('All news'),
-'search_items' => __('Search news'),
-'not_found' => __('No news found.'),
+'name' => _x('News', 'plural', 'mr-web'),
+'singular_name' => _x('News', 'singular', 'mr-web'),
+'menu_name' => _x('News', 'admin menu', 'mr-web'),
+'name_admin_bar' => _x('News', 'admin bar', 'mr-web'),
+'add_new' => _x('Add New', 'add new', 'mr-web'),
+'add_new_item' => __('Add New News', 'mr-web'),
+'new_item' => __('New News', 'mr-web'),
+'edit_item' => __('Edit News', 'mr-web'),
+'view_item' => __('View News', 'mr-web'),
+'all_items' => __('All News', 'mr-web'),
+'search_items' => __('Search News', 'mr-web'),
+'not_found' => __('No News found.', 'mr-web'),
 );
 $args = array(
+// link for the icon: https://developer.wordpress.org/resource/dashicons/#admin-links
+'menu_icon' => '',
 'supports' => $supports,
 'labels' => $labels,
 'public' => true,
 'query_var' => true,
-'rewrite' => array('slug' => 'news'),
+'rewrite' => array('slug' => 'News'),
 'has_archive' => true,
 'hierarchical' => false,
 );
-register_post_type('news', $args);
+register_post_type('News', $args);
 }
 
 /*Custom Post type end*/
+
