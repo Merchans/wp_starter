@@ -1,0 +1,30 @@
+/* ============================================================
+ * Elements: Headings
+ * ============================================================
+ *
+ * Simple default styles for headings 1 through 6. Anything more opinionated
+ * than simple font-size changes should likely be applied via classes (see:
+ * (http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
+ *
+ */
+
+
+// ============================================================
+// Variables
+
+$e-headings__font-weight:      400 !default;
+
+
+// ============================================================
+// CSS output 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: $e-headings__font-weight;
+  margin-top: 0;
+}
